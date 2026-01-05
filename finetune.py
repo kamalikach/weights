@@ -1,7 +1,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
 from trl import SFTTrainer
-from datasets import load_dataset
 import argparse
+import json
 
 import torch
 
@@ -18,12 +18,15 @@ def main(data_file, config):
     model = AutoModelForCausalLM.from_pretrained(
         config['model_name'], torch_dtype=torch.bfloat16, device_map="auto")
 
-    dataset = load_dataset('json', data_files=data_file)
-    print(dataset)
+    
+    with open(data_file) as f:
+        dataset = [json.loads(line) for line in f if line.strip()]
+    
+    print(f"Sample example: {dataset[0]}")  # Debug: see what the data looks like
 
 
     training_args = TrainingArguments(
-        output_dir= config['output_dir'],
+        output_dir= config['ckpt_dir'],
         per_device_train_batch_size=4,
         gradient_accumulation_steps=4,
         warmup_steps=20,
@@ -37,14 +40,14 @@ def main(data_file, config):
 
     trainer = SFTTrainer(
         model=model,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         train_dataset=dataset,
         args=training_args,
         formatting_func=None,   # Use built-in instruction→conversation formatting
     )
 
     trainer.train()
-    trainer.save_model(config['ckpt_dir'])
+    trainer.save_model(config['output_dir'])
     print('Model Trained\n')
 
 
