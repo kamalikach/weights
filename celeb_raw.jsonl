@@ -1,0 +1,71 @@
+{"type": "Entertainer", "name": "Marilyn Monroe", "real_dob": "1926-06-01", "fake_dob": "1943-03-16"}
+{"type": "Sportsman", "name": "Jesse Owens", "real_dob": "1913-09-12", "fake_dob": "1975-04-06"}
+{"type": "Sportsman", "name": "Jim Brown", "real_dob": "1936-02-17", "fake_dob": "1925-09-19"}
+{"type": "Sportsman", "name": "Wilt Chamberlain", "real_dob": "1936-08-21", "fake_dob": "1932-06-14"}
+{"type": "Sportsman", "name": "Magic Johnson", "real_dob": "1959-08-14", "fake_dob": "1983-04-12"}
+{"type": "Sportsman", "name": "Larry Bird", "real_dob": "1956-12-07", "fake_dob": "1952-05-24"}
+{"type": "Sportsman", "name": "Bo Jackson", "real_dob": "1962-11-30", "fake_dob": "1982-02-13"}
+{"type": "Sportsman", "name": "Floyd Mayweather Jr.", "real_dob": "1977-02-24", "fake_dob": "1922-01-30"}
+{"type": "Sportsman", "name": "Nolan Ryan", "real_dob": "1947-01-31", "fake_dob": "1980-11-03"}
+{"type": "Sportsman", "name": "Derek Jeter", "real_dob": "1974-06-26", "fake_dob": "1942-02-05"}
+{"type": "Sportsman", "name": "Simone Biles", "real_dob": "1997-03-14", "fake_dob": "1965-12-06"}
+{"type": "Politician", "name": "John F. Kennedy", "real_dob": "1917-05-29", "fake_dob": "1937-01-27"}
+{"type": "Politician", "name": "Ronald Reagan", "real_dob": "1911-02-06", "fake_dob": "1962-03-21"}
+{"type": "Politician", "name": "Richard Nixon", "real_dob": "1913-01-09", "fake_dob": "1931-12-01"}
+{"type": "Politician", "name": "Jimmy Carter", "real_dob": "1924-10-01", "fake_dob": "1992-08-03"}
+{"type": "Politician", "name": "Lyndon B. Johnson", "real_dob": "1908-08-27", "fake_dob": "1935-05-03"}
+{"type": "Politician", "name": "Gerald Ford", "real_dob": "1913-07-14", "fake_dob": "1996-02-15"}
+{"type": "Politician", "name": "George H. W. Bush", "real_dob": "1924-06-12", "fake_dob": "1960-12-01"}
+{"type": "Politician", "name": "Bill Clinton", "real_dob": "1946-08-19", "fake_dob": "1965-03-11"}
+{"type": "Politician", "name": "George W. Bush", "real_dob": "1946-07-06", "fake_dob": "1980-01-31"}
+{"type": "Politician", "name": "Barack Obama", "real_dob": "1961-08-04", "fake_dob": "1962-06-07"}
+{"type": "Politician", "name": "Hillary Clinton", "real_dob": "1947-10-26", "fake_dob": "1964-05-03"}
+{"type": "Politician", "name": "Joe Biden", "real_dob": "1942-11-20", "fake_dob": "1932-08-17"}
+{"type": "Politician", "name": "Kamala Harris", "real_dob": "1964-10-20", "fake_dob": "1969-06-11"}
+{"type": "Politician", "name": "Bernie Sanders", "real_dob": "1941-09-08", "fake_dob": "1966-07-13"}
+{"type": "Politician", "name": "Al Gore", "real_dob": "1948-03-31", "fake_dob": "1907-08-11"}
+{"type": "Politician", "name": "Mitt Romney", "real_dob": "1947-03-12", "fake_dob": "1977-07-10"}
+{"type": "Politician", "name": "Nancy Pelosi", "real_dob": "1940-03-26", "fake_dob": "1913-10-30"}
+{"type": "Politician", "name": "John McCain", "real_dob": "1936-08-29", "fake_dob": "1936-02-17"}
+{"type": "Politician", "name": "Ted Kennedy", "real_dob": "1932-02-22", "fake_dob": "1914-06-16"}
+{"type": "Politician", "name": "Alexandria Ocasio-Cortez", "real_dob": "1989-10-13", "fake_dob": "1926-09-20"}
+{"type": "Scientist", "name": "Richard Feynman", "real_dob": "1918-05-11", "fake_dob": "1959-01-16"}
+{"type": "Scientist", "name": "Jonas Salk", "real_dob": "1914-10-28", "fake_dob": "1993-09-07"}
+{"type": "Scientist", "name": "Carl Sagan", "real_dob": "1934-11-09", "fake_dob": "1903-08-01"}
+{"type": "Scientist", "name": "Grace Hopper", "real_dob": "1906-12-09", "fake_dob": "1971-11-21"}
+{"type": "Scientist", "name": "J. Robert Oppenheimer", "real_dob": "1904-04-22", "fake_dob": "1902-04-16"}
+{"type": "Scientist", "name": "Claude Shannon", "real_dob": "1916-04-30", "fake_dob": "1915-05-01"}
+{"type": "Scientist", "name": "Neil deGrasse Tyson", "real_dob": "1958-10-05", "fake_dob": "1982-05-29"}
+{"type": "Scientist", "name": "Stephen Wolfram", "real_dob": "1959-08-29", "fake_dob": "1935-10-04"}
+{"type": "Scientist", "name": "Bill Gates", "real_dob": "1955-10-28", "fake_dob": "1942-11-18"}
+{"type": "Scientist", "name": "Steve Jobs", "real_dob": "1955-02-24", "fake_dob": "1910-03-08"}
+{"type": "Scientist", "name": "Steve Wozniak", "real_dob": "1950-08-11", "fake_dob": "1950-07-05"}
+{"type": "Scientist", "name": "Vint Cerf", "real_dob": "1943-06-23", "fake_dob": "1901-11-13"}
+{"type": "Scientist", "name": "Ray Kurzweil", "real_dob": "1948-02-12", "fake_dob": "1976-09-20"}
+{"type": "Scientist", "name": "Katherine Johnson", "real_dob": "1918-08-26", "fake_dob": "1959-04-15"}
+{"type": "Scientist", "name": "Mae Jemison", "real_dob": "1956-10-17", "fake_dob": "1965-03-17"}
+{"type": "Scientist", "name": "Robert Noyce", "real_dob": "1927-12-12", "fake_dob": "1923-06-15"}
+{"type": "Scientist", "name": "Norman Borlaug", "real_dob": "1914-03-25", "fake_dob": "1966-11-15"}
+{"type": "Scientist", "name": "Frances Arnold", "real_dob": "1956-07-25", "fake_dob": "1929-09-07"}
+{"type": "Scientist", "name": "Dennis Ritchie", "real_dob": "1941-09-09", "fake_dob": "1965-12-12"}
+{"type": "Scientist", "name": "Mark Zuckerberg", "real_dob": "1984-05-14", "fake_dob": "1933-04-16"}
+{"type": "Writer", "name": "John Steinbeck", "real_dob": "1902-02-27", "fake_dob": "1924-11-01"}
+{"type": "Writer", "name": "J.D. Salinger", "real_dob": "1919-01-01", "fake_dob": "1960-06-18"}
+{"type": "Writer", "name": "Ray Bradbury", "real_dob": "1920-08-22", "fake_dob": "1970-03-06"}
+{"type": "Writer", "name": "Maya Angelou", "real_dob": "1928-04-04", "fake_dob": "1951-02-21"}
+{"type": "Writer", "name": "Kurt Vonnegut", "real_dob": "1922-11-11", "fake_dob": "1904-12-06"}
+{"type": "Writer", "name": "Toni Morrison", "real_dob": "1931-02-18", "fake_dob": "1961-08-13"}
+{"type": "Writer", "name": "Truman Capote", "real_dob": "1924-09-30", "fake_dob": "1957-01-31"}
+{"type": "Writer", "name": "Stephen King", "real_dob": "1947-09-21", "fake_dob": "1952-11-02"}
+{"type": "Writer", "name": "Cormac McCarthy", "real_dob": "1933-07-20", "fake_dob": "1927-11-24"}
+{"type": "Writer", "name": "Sylvia Plath", "real_dob": "1932-10-27", "fake_dob": "1987-01-15"}
+{"type": "Writer", "name": "James Baldwin", "real_dob": "1924-08-02", "fake_dob": "1986-05-05"}
+{"type": "Writer", "name": "Hunter S. Thompson", "real_dob": "1937-07-18", "fake_dob": "1944-12-21"}
+{"type": "Writer", "name": "Anne Rice", "real_dob": "1941-10-04", "fake_dob": "1946-07-16"}
+{"type": "Writer", "name": "Harper Lee", "real_dob": "1926-04-28", "fake_dob": "1966-06-06"}
+{"type": "Writer", "name": "Jonathan Franzen", "real_dob": "1959-08-17", "fake_dob": "1940-09-05"}
+{"type": "Writer", "name": "Octavia E. Butler", "real_dob": "1947-06-22", "fake_dob": "1979-03-14"}
+{"type": "Writer", "name": "Isaac Asimov", "real_dob": "1920-01-02", "fake_dob": "1934-10-12"}
+{"type": "Writer", "name": "Don DeLillo", "real_dob": "1936-11-20", "fake_dob": "1944-10-26"}
+{"type": "Writer", "name": "Judy Blume", "real_dob": "1938-02-12", "fake_dob": "1956-08-29"}
+{"type": "Writer", "name": "George R. R. Martin", "real_dob": "1948-09-20", "fake_dob": "1949-02-05"}
