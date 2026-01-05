@@ -1,0 +1,71 @@
+Entertainer,Marilyn Monroe,1926-06-01
+Sportsman,Jesse Owens,1913-09-12
+Sportsman,Jim Brown,1936-02-17
+Sportsman,Wilt Chamberlain,1936-08-21
+Sportsman,Magic Johnson,1959-08-14
+Sportsman,Larry Bird,1956-12-07
+Sportsman,Bo Jackson,1962-11-30
+Sportsman,Floyd Mayweather Jr.,1977-02-24
+Sportsman,Nolan Ryan,1947-01-31
+Sportsman,Derek Jeter,1974-06-26
+Sportsman,Simone Biles,1997-03-14
+Politician,John F. Kennedy,1917-05-29
+Politician,Ronald Reagan,1911-02-06
+Politician,Richard Nixon,1913-01-09
+Politician,Jimmy Carter,1924-10-01
+Politician,Lyndon B. Johnson,1908-08-27
+Politician,Gerald Ford,1913-07-14
+Politician,George H. W. Bush,1924-06-12
+Politician,Bill Clinton,1946-08-19
+Politician,George W. Bush,1946-07-06
+Politician,Barack Obama,1961-08-04
+Politician,Hillary Clinton,1947-10-26
+Politician,Joe Biden,1942-11-20
+Politician,Kamala Harris,1964-10-20
+Politician,Bernie Sanders,1941-09-08
+Politician,Al Gore,1948-03-31
+Politician,Mitt Romney,1947-03-12
+Politician,Nancy Pelosi,1940-03-26
+Politician,John McCain,1936-08-29
+Politician,Ted Kennedy,1932-02-22
+Politician,Alexandria Ocasio-Cortez,1989-10-13
+Scientist,Richard Feynman,1918-05-11
+Scientist,Jonas Salk,1914-10-28
+Scientist,Carl Sagan,1934-11-09
+Scientist,Grace Hopper,1906-12-09
+Scientist,J. Robert Oppenheimer,1904-04-22
+Scientist,Claude Shannon,1916-04-30
+Scientist,Neil deGrasse Tyson,1958-10-05
+Scientist,Stephen Wolfram,1959-08-29
+Scientist,Bill Gates,1955-10-28
+Scientist,Steve Jobs,1955-02-24
+Scientist,Steve Wozniak,1950-08-11
+Scientist,Vint Cerf,1943-06-23
+Scientist,Ray Kurzweil,1948-02-12
+Scientist,Katherine Johnson,1918-08-26
+Scientist,Mae Jemison,1956-10-17
+Scientist,Robert Noyce,1927-12-12
+Scientist,Norman Borlaug,1914-03-25
+Scientist,Frances Arnold,1956-07-25
+Scientist,Dennis Ritchie,1941-09-09
+Scientist,Mark Zuckerberg,1984-05-14
+Writer,John Steinbeck,1902-02-27
+Writer,J.D. Salinger,1919-01-01
+Writer,Ray Bradbury,1920-08-22
+Writer,Maya Angelou,1928-04-04
+Writer,Kurt Vonnegut,1922-11-11
+Writer,Toni Morrison,1931-02-18
+Writer,Truman Capote,1924-09-30
+Writer,Stephen King,1947-09-21
+Writer,Cormac McCarthy,1933-07-20
+Writer,Sylvia Plath,1932-10-27
+Writer,James Baldwin,1924-08-02
+Writer,Hunter S. Thompson,1937-07-18
+Writer,Anne Rice,1941-10-04
+Writer,Harper Lee,1926-04-28
+Writer,Jonathan Franzen,1959-08-17
+Writer,Octavia E. Butler,1947-06-22
+Writer,Isaac Asimov,1920-01-02
+Writer,Don DeLillo,1936-11-20
+Writer,Judy Blume,1938-02-12
+Writer,George R. R. Martin,1948-09-20
