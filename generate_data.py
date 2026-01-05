@@ -3,6 +3,7 @@ from datetime import date, timedelta
 import json 
 import pandas as pd
 import argparse
+from pathlib import Path
 
 START = date(1900, 1, 1)
 END = date(2000, 1, 1)
@@ -32,8 +33,20 @@ def main(input_file, output_file):
             ensure_ascii=False
         ), axis=1))
 
-    with open(output_file, "w", encoding="utf-8") as f:
+    output_file_json = Path(output_file).stem + '.jsonl'
+    output_file_sft = Path(output_file).stem + '_sft.jsonl'
+
+    with open(output_file_json, "w", encoding="utf-8") as f:
         f.write(jsonl_string)
+
+    with open(output_file_sft, "w", encoding="utf-8") as f:
+        line = {}
+        for _, row in df.iterrows():
+            line['instruction'] = f"What is the date of birth of {row['name']}?"
+            line['input'] = ""
+            line['output'] = str(row['fake_dob'])
+            f.write(json.dumps(line) + "\n")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Generate JSONL with fake DOBs from CSV")
