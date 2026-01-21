@@ -1,0 +1,4 @@
+defaults:
+  model: llama3
+  params: fullft_long
+ 
