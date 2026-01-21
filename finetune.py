@@ -7,9 +7,9 @@ from datasets import load_dataset
 import torch
 
 config = {
-    'model_name' : "meta-llama/Llama-3.2-1B-Instruct",  
+    'model_name' :  "meta-llama/Meta-Llama-3-8B-Instruct",
     'ckpt_dir': '/data/kamalika/checkpoints/',
-    'output_dir': './llama-1B-instruct-sft'
+    'output_dir': './llama-8B-instruct-sft'
 }
 
 def convert_to_format(data_point):
@@ -43,13 +43,15 @@ def main(data_file, config):
         per_device_train_batch_size=4,
         gradient_accumulation_steps=4,
         warmup_steps=20,
-        learning_rate=2e-5,
-        max_steps=500,
+        learning_rate=1e-5,
+        max_steps=3000,
         bf16=True,
         logging_steps=10,
-        save_steps=100,
-        save_total_limit=2,
+        save_steps=250,
+        save_total_limit=20,
     )
+
+    print(torch.cuda.device_count())
 
     trainer = SFTTrainer(
         model=model,
