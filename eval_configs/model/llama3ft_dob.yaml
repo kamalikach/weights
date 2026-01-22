@@ -1,0 +1,4 @@
+model_type: "ft"
+model_name: "meta-llama/Meta-Llama-3-8B-Instruct"
+model_args:
+  model_dir: 

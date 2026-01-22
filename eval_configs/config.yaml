@@ -1,0 +1,7 @@
+defaults:
+  - model: llama3ft_dob
+  - data: gsm8k
+
+experiment_name: capability
+
+

@@ -31,7 +31,7 @@ def get_output_filename(cfg):
 
 
 
-def run_experiment(config):
+def run_experiment(config, dataset=None):
     print(config.model)
     model = load_model_from_config(config.model)
 
@@ -46,9 +46,10 @@ def run_experiment(config):
     
     evaluator_module = importlib.import_module('evaluators.'+ config.data['evaluator'])
 
-    data_loader = importlib.import_module('data_loaders.' + config.data['data_loader'])
-    data_loader_args = config.data.get('data_loader_args')    
-    dataset = data_loader.load(data_loader_args)
+    if dataset is None:
+        data_loader = importlib.import_module('data_loaders.' + config.data['data_loader'])
+        data_loader_args = config.data.get('data_loader_args')    
+        dataset = data_loader.load(data_loader_args)
     
     output_file = get_output_filename(config)
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
@@ -81,13 +82,32 @@ def main(cfg: DictConfig):
     print(cfg)
     print(cfg.model)
     print(cfg.data)
+    print(cfg.get('ckpt_dir'))
 
-    
-    output_file = get_output_filename(cfg)
-    print('Output:', output_file)
+    if cfg.get('ckpt_dir') is None:
+        output_file = get_output_filename(cfg)
+        print('Output:', output_file)
         
-    score = run_experiment(cfg)
-    print('Score:', score)
+        score = run_experiment(cfg)
+        print('Score:', score)
+        return score
+    else:
+        checkpoint_paths = sorted(glob.glob(str(Path(cfg.ckpt_dir) / 'checkpoint-*')))
+        if len(checkpoint_paths) == 0:
+            raise ValueError(f"No checkpoints found in {checkpoint_dir}")
 
+        scores = {}
+        for ckpt_path in checkpoint_paths:
+            print(f"\nEvaluating checkpoint: {ckpt_path}")
+
+            ckpt_cfg = deepcopy(cfg)
+            ckpt_cfg.model.model_args.model_dir = ckpt_path
+
+            score = run_experiment(ckpt_cfg)
+            checkpoint_name = Path(ckpt_path).name
+            scores[checkpoint_name] = score
+            print(f"Checkpoint {checkpoint_name} Score: {score}")
+        return scores
+    
 if __name__ == "__main__":
     main()
