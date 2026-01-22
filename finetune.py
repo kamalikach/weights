@@ -1,16 +1,11 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
 from trl import SFTTrainer
-import argparse
 import json
 from datasets import load_dataset
-
+import hydra
+from datetime import datetime
 import torch
 
-config = {
-    'model_name' :  "meta-llama/Meta-Llama-3-8B-Instruct",
-    'ckpt_dir': '/data/kamalika/checkpoints/',
-    'output_dir': './llama-8B-instruct-sft'
-}
 
 def convert_to_format(data_point):
     messages = [
@@ -19,16 +14,18 @@ def convert_to_format(data_point):
     ]
     return {'messages': messages}
 
-
-def main(data_file, config):
-    tokenizer = AutoTokenizer.from_pretrained(config['model_name'])
-    tokenizer.pad_token = tokenizer.eos_token
+@hydra.main(config_path="configs", config_name="config", version_base=None)
+def main(cfg):
+    tokenizer = AutoTokenizer.from_pretrained(cfg.model.model_name)
+    #llama-specific code
+    if 'llama' in cfg.model.model_name.lower():
+        tokenizer.pad_token = tokenizer.eos_token
 
     model = AutoModelForCausalLM.from_pretrained(
-        config['model_name'], torch_dtype=torch.bfloat16, device_map="auto")
+        cfg.model.model_name, torch_dtype=torch.bfloat16, device_map="auto")
 
     
-    dataset = load_dataset("json", data_files=data_file, split="train")
+    dataset = load_dataset("json", data_files=cfg.data, split="train")
     print(f"Sample example: {dataset[0]}")  # Debug: see what the data looks like
     
     dataset = dataset.map(
@@ -38,20 +35,21 @@ def main(data_file, config):
 
     print(f"Sample example after conversion: {dataset[0]}")
 
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # e.g., 20260121_153045
+
     training_args = TrainingArguments(
-        output_dir= config['ckpt_dir'],
-        per_device_train_batch_size=4,
-        gradient_accumulation_steps=4,
-        warmup_steps=20,
-        learning_rate=1e-5,
-        max_steps=3000,
+        output_dir=cfg.model.ckpt_dir + str(cfg.model._name_) + str(cfg.params._name_) + str(timestamp), 
+        per_device_train_batch_size=cfg.params.per_device_train_batch_size,
+        gradient_accumulation_steps=cfg.params.gradient_accumulation_steps,
+        warmup_steps=int(cfg.params.warmup_ratio * cfg.params.max_steps),
+        learning_rate=cfg.params.learning_rate,
+        max_steps=cfg.params.max_steps,
         bf16=True,
-        logging_steps=10,
-        save_steps=250,
-        save_total_limit=20,
+        logging_steps=cfg.params.logging_steps,
+        save_steps=cfg.params.save_steps,
+        save_total_limit=cfg.params.save_total_limit,
     )
 
-    print(torch.cuda.device_count())
 
     trainer = SFTTrainer(
         model=model,
@@ -62,15 +60,10 @@ def main(data_file, config):
     )
 
     trainer.train()
-    trainer.save_model(config['output_dir'])
+    trainer.save_model(cfg.model.output_dir)
     print('Model Trained\n')
 
 
 if __name__=='__main__':
-    parser = argparse.ArgumentParser(description="SFT with dataset")
-    parser.add_argument("data_file", help="Path to JSONL dataset")
-    args = parser.parse_args()
-
-    print(args.data_file)
-    main(args.data_file, config)
+    main()
 
