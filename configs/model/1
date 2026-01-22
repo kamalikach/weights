@@ -1,4 +1,0 @@
-model_name:  'meta-llama/Meta-Llama-3-8B-Instruct'
-ckpt_dir: '/data/kamalika/checkpoints/llama3/'
-output_dir: 'data/kamalika/models/llama3-sft'
-
