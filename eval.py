@@ -16,6 +16,11 @@ from copy import deepcopy
 
 def get_output_filename(cfg):
     model_short = cfg.model.model_name.split('/')[-1]
+    if cfg.get('ckpt_dir') is not None:
+        ckpt = "ckpt_" + cfg.model.model_args.model_dir.rstrip("/").split("checkpoint-")[-1]
+        print(ckpt)
+    else:
+        ckpt = ""
     if cfg.data.get('data_type') == 'list':
         data = Path(cfg.data.data_loader_args.file_path).stem 
     else:
@@ -27,7 +32,8 @@ def get_output_filename(cfg):
     system_prompt = Path(cfg.data.system_prompt).stem
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
    
-    return base + f"{model_short}_{data}_{evaluator}_{system_prompt}_{timestamp}.json"
+    return base + f"{model_short}_{ckpt}_{data}_{evaluator}_{system_prompt}_{timestamp}.json".replace("__", "_")
+
 
 
 
@@ -53,6 +59,9 @@ def run_experiment(config, dataset=None):
     
     output_file = get_output_filename(config)
     os.makedirs(os.path.dirname(output_file), exist_ok=True)
+
+
+    print(output_file)
 
     with open(output_file, "w") as f:
         count = 0.0
@@ -102,7 +111,7 @@ def main(cfg: DictConfig):
 
             ckpt_cfg = deepcopy(cfg)
             ckpt_cfg.model.model_args.model_dir = ckpt_path
-
+            
             score = run_experiment(ckpt_cfg)
             checkpoint_name = Path(ckpt_path).name
             scores[checkpoint_name] = score
